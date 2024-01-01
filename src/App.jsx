@@ -31,12 +31,17 @@ function App() {
         </div>
       </div>
       <div id="timeFrameBtns">
-        <button>Daily</button>
+        <button
+          onClick={() => {
+            console.log(data);
+          }}
+        >
+          Daily
+        </button>
         <button>Weekly</button>
         <button>Monthly</button>
       </div>
-      <Stuff />
-      {/* os botões vão fazer uma map no array data e só mandar o que precisar */}
+      <Stuff data={data} />
     </div>
   );
 }
