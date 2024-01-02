@@ -2,20 +2,13 @@ const Stuff = (data) => {
   const dataArr = data.data;
   return (
     <div>
-      <button
-        onClick={() => {
-          console.log(dataArr[0].timeframes.daily.current);
-        }}
-      >
-        Test
-      </button>
       <ul>
         {dataArr.map((item) => (
-          <div>
+          <div key={item.id}>
             <p key={item.id}>{item.title}</p>
-            <p>{dataArr[0].timeframes.daily.current}</p>
+            <p key={item.id}>{item.timeframes.daily.current}hrs</p>
 
-            <p>{dataArr[0].timeframes.daily.previous}</p>
+            <p key={item.id}>Last Week - {item.timeframes.daily.previous}hrs</p>
           </div>
         ))}
       </ul>

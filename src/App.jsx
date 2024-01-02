@@ -5,6 +5,7 @@ import Stuff from "./components/Stuff";
 
 function App() {
   const [data, setData] = useState(null);
+  const [dataSelecionada, setSelecionada] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,8 +22,29 @@ function App() {
   if (!data) {
     return <div>Loading...</div>;
   }
+  /* 
+  função (data, 'timeFrame'){
+  
+  
+  }
+  
+  */
+  const filterTimeframe = (data, timeFrame) => {
+    console.log(data[0].timeframes[timeFrame]);
+    data.forEach((item) => {
+      const obj = {
+        title: item.title,
+        timeframes: {
+          current: data[0].timeframes[timeFrame].current,
+          previous: data[0].timeframes[timeFrame].previous,
+        },
+      };
+      console.log(obj);
+    });
+  };
   return (
     <div id="dashboard">
+      <button onClick={() => filterTimeframe(data, "daily")}>test</button>
       <div id="perfil">
         <div id="foto"></div>
         <div id="nome">
