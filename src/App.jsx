@@ -6,6 +6,22 @@ import Stuff from "./components/Stuff";
 function App() {
   const [data, setData] = useState(null);
   const [dataSelecionada, setSelecionada] = useState(null);
+  const filterTimeframe = (data, timeFrame) => {
+    let dataArr = [];
+    data.forEach((item) => {
+      const obj = {
+        title: item.title,
+        timeframes: {
+          current: data[0].timeframes[timeFrame].current,
+          previous: data[0].timeframes[timeFrame].previous,
+        },
+        choosenTime: timeFrame,
+      };
+      dataArr.push(obj);
+    });
+    setSelecionada(dataArr);
+    console.log(dataSelecionada);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -13,6 +29,7 @@ function App() {
         const data = await response.json();
         setData(data);
         console.log(data);
+        filterTimeframe(data, "daily");
       } catch (error) {
         console.log(error);
       }
@@ -22,48 +39,48 @@ function App() {
   if (!data) {
     return <div>Loading...</div>;
   }
-  /* 
-  função (data, 'timeFrame'){
-  
-  
-  }
-  
-  */
-  const filterTimeframe = (data, timeFrame) => {
-    console.log(data[0].timeframes[timeFrame]);
-    data.forEach((item) => {
-      const obj = {
-        title: item.title,
-        timeframes: {
-          current: data[0].timeframes[timeFrame].current,
-          previous: data[0].timeframes[timeFrame].previous,
-        },
-      };
-      console.log(obj);
-    });
-  };
+
   return (
     <div id="dashboard">
-      <button onClick={() => filterTimeframe(data, "daily")}>test</button>
-      <div id="perfil">
-        <div id="foto"></div>
-        <div id="nome">
-          <p>Report for</p>
-          <h1>Jeremy Robson</h1>
+      <div id="profileDiv">
+        <div id="perfil">
+          <div id="foto">
+            <img
+              src="../assets/images/image-jeremy.png"
+              alt="jeremy profille image"
+            />
+          </div>
+          <div id="nome">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div id="timeFrameBtns">
+          <button
+            onClick={() => {
+              filterTimeframe(data, "daily");
+            }}
+          >
+            Daily
+          </button>
+          <button
+            onClick={() => {
+              filterTimeframe(data, "weekly");
+            }}
+          >
+            Weekly
+          </button>
+          <button
+            onClick={() => {
+              filterTimeframe(data, "monthly");
+            }}
+          >
+            Monthly
+          </button>
         </div>
       </div>
-      <div id="timeFrameBtns">
-        <button
-          onClick={() => {
-            console.log(data);
-          }}
-        >
-          Daily
-        </button>
-        <button>Weekly</button>
-        <button>Monthly</button>
-      </div>
-      <Stuff data={data} />
+
+      <Stuff data={dataSelecionada} />
     </div>
   );
 }
