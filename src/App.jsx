@@ -34,7 +34,7 @@ function App() {
       }
     };
     fetchData();
-  }, []);
+  });
   if (!data) {
     return <div>Loading...</div>;
   }
