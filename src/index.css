@@ -38,10 +38,13 @@ body {
   flex-direction: column;
   border-radius: 1rem;
 }
-
+/* Dark blue: hsl(235, 46%, 20%)
+- Desaturated blue: hsl(235, 45%, 61%)
+- Pale Blue: hsl(236, 100%, 87%) */
 #perfil {
-  background-color: hsl(235, 45%, 61%);
+  background-color: hsl(256, 64%, 52%);
   padding: 1rem;
+  flex: 1.5;
   border-radius: 1rem;
   font-weight: 300;
 }
@@ -49,20 +52,24 @@ body {
   margin: 1rem 0 1rem 0;
 }
 
-img {
+#foto img {
   width: 35%;
   border: 1px solid white;
   border-radius: 50%;
 }
 #nome {
   margin: 10% 0% 10% 0%;
-  font-size: 18px;
+}
+#nome p {
+  font-size: 10px;
+  color: hsl(236, 32%, 66%);
 }
 h1 {
   font-weight: 300;
+  font-size: 26px;
 }
 #timeFrameBtns {
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -85,6 +92,47 @@ button:hover {
   grid-template-columns: auto auto auto;
   column-gap: 1rem;
   row-gap: 1rem;
+}
+#Work {
+  background-color: hsl(43, 84%, 65%);
+
+  background-image: url("../assets/images/icon-work.svg");
+}
+#Play {
+  background-color: hsl(236, 100%, 87%);
+  background-image: url("../assets/images/icon-play.svg");
+}
+#Study {
+  background-color: hsl(348, 100%, 68%);
+  background-image: url("../assets/images/icon-study.svg");
+}
+#Exercise {
+  background-color: hsl(145, 58%, 55%);
+  background-image: url("../assets/images/icon-exercise.svg");
+}
+#Social {
+  background-color: hsl(264, 64%, 52%);
+  background-image: url("../assets/images/icon-social.svg");
+}
+#Self_Care {
+  background-color: hsl(61, 78%, 45%);
+  background-image: url("../assets/images/icon-self-care.svg");
+}
+.bigActivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-top: 20%;
+  border-radius: 0.5rem;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.activities {
+  background-color: hsl(235, 46%, 20%);
+  padding: 10%;
+  height: 100%;
+  border-radius: 0.5rem;
 }
 /* - Blue: hsl(246, 80%, 60%)
 
