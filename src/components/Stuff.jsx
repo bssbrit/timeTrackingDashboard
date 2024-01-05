@@ -1,4 +1,5 @@
 import ellipsisIcon from "../../assets/images/icon-ellipsis.svg";
+
 const Stuff = (data) => {
   const dataArr = data.data;
 
@@ -12,15 +13,15 @@ const Stuff = (data) => {
             id={item.title.split(" ").join("_")}
           >
             <div key={item.id} className="activities">
-              <p key={item.id}>
-                {item.title}
-                <p>
+              <div id="title">
+                <p key={item.id}>{item.title}</p>
+                <div>
                   <img src={ellipsisIcon} alt="" />
-                </p>
-              </p>
-              <p key={item.id}>{item.timeframes.current}hrs</p>
+                </div>
+              </div>
+              <h1 key={item.id}>{item.timeframes.current}hrs</h1>
 
-              <p key={item.id}>
+              <p id="lastTime" key={item.id}>
                 Last{" "}
                 {item.choosenTime.charAt(0).toUpperCase() +
                   item.choosenTime.slice(1)}{" "}

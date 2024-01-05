@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import "./App.css";
 import Stuff from "./components/Stuff";
 
 function App() {
@@ -12,8 +11,8 @@ function App() {
       const obj = {
         title: item.title,
         timeframes: {
-          current: data[0].timeframes[timeFrame].current,
-          previous: data[0].timeframes[timeFrame].previous,
+          current: item.timeframes[timeFrame].current,
+          previous: item.timeframes[timeFrame].previous,
         },
         choosenTime: timeFrame,
       };
