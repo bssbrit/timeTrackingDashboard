@@ -38,6 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
+  font-size: 18px;
 }
 /* Dark blue: hsl(235, 46%, 20%)
 - Desaturated blue: hsl(235, 45%, 61%)
@@ -62,7 +63,6 @@ body {
   margin: 10% 0% 10% 0%;
 }
 #nome p {
-  font-size: 10px;
   color: hsl(236, 32%, 66%);
 }
 h1 {
@@ -80,7 +80,7 @@ button {
   text-align: left;
   width: 40%;
   background-color: transparent;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 300;
   color: hsl(235, 45%, 61%);
 }
@@ -147,10 +147,11 @@ button:hover {
 #lastTime {
   font-size: 10px;
   color: hsl(236, 32%, 66%);
+  font-size: 18px;
 }
 .activities h1 {
   font-weight: 300;
-  font-size: 32px;
+  font-size: 42px;
 }
 #lastTime:hover {
   color: whitesmoke;
@@ -183,4 +184,8 @@ button:hover {
 - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
 - Weights: 300, 400, 500
 
+ */
+
+/* 
+ acho que só mudar para um coluna no grid e ajustar os gap
  */
