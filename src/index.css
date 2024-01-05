@@ -69,6 +69,9 @@ h1 {
   font-weight: 300;
   font-size: 42px;
 }
+h1:hover {
+  color: rgb(156, 158, 156);
+}
 #timeFrameBtns {
   padding: 1.2rem;
   display: flex;
@@ -143,6 +146,9 @@ button:hover {
   font-size: 10px;
   margin-bottom: 3%;
 }
+#title p:hover {
+  color: rgb(156, 158, 156);
+}
 
 #lastTime {
   font-size: 10px;
@@ -153,8 +159,63 @@ button:hover {
   font-weight: 300;
   font-size: 42px;
 }
+.activities h1:hover {
+  color: rgb(156, 158, 156);
+}
 #lastTime:hover {
   color: whitesmoke;
+}
+
+@media (max-width: 810px) {
+  h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 750px) {
+  #dashboard {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 70%;
+    row-gap: 1rem;
+    justify-content: center;
+    height: 90%;
+  }
+  #perfil {
+    display: flex;
+  }
+  #perfil h1 {
+    font-size: 24px;
+  }
+  #nome {
+    flex: 2;
+  }
+  #foto {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #foto img {
+    width: 70%;
+    border: 2px solid white;
+  }
+  #timeFrameBtns {
+    flex-direction: row;
+  }
+  #info {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  #activityStats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+  #activityStats h1 {
+    font-size: 24px;
+  }
 }
 
 /* - Blue: hsl(246, 80%, 60%)

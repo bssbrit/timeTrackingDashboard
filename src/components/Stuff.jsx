@@ -19,14 +19,16 @@ const Stuff = (data) => {
                   <img src={ellipsisIcon} alt="" />
                 </div>
               </div>
-              <h1 key={item.id}>{item.timeframes.current}hrs</h1>
+              <div id="activityStats">
+                <h1 key={item.id}>{item.timeframes.current}hrs</h1>
 
-              <p id="lastTime" key={item.id}>
-                Last{" "}
-                {item.choosenTime.charAt(0).toUpperCase() +
-                  item.choosenTime.slice(1)}{" "}
-                - {item.timeframes.previous}hrs
-              </p>
+                <p id="lastTime" key={item.id}>
+                  Last{" "}
+                  {item.choosenTime.charAt(0).toUpperCase() +
+                    item.choosenTime.slice(1)}{" "}
+                  - {item.timeframes.previous}hrs
+                </p>
+              </div>
             </div>
           </div>
         ))}
