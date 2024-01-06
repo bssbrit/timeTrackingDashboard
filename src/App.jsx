@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/data.json");
+        const response = await fetch("g/data.json");
         const data = await response.json();
         setData(data);
         console.log(data);
@@ -44,10 +44,7 @@ function App() {
       <div id="profileDiv">
         <div id="perfil">
           <div id="foto">
-            <img
-              src="../assets/images/image-jeremy.png"
-              alt="jeremy profille image"
-            />
+            <img src="/image-jeremy.png" alt="jeremy profille image" />
           </div>
           <div id="nome">
             <p>Report for</p>
