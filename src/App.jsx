@@ -34,10 +34,10 @@ function App() {
       }
     };
     fetchData();
-  });
-  /* if (!data) {
+  }, []);
+  if (!data) {
     return <div>Loading...</div>;
-  } */
+  }
 
   return (
     <div id="dashboard">
