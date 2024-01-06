@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("../assets/data.json");
+        const response = await fetch("./public/data.json");
         const data = await response.json();
         setData(data);
         console.log(data);
